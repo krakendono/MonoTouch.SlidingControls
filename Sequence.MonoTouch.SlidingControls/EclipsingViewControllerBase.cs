@@ -9,6 +9,7 @@ namespace Sequence.MonoTouch.SlidingControls
 	{
 		protected readonly UIView _shadowView;
 		private readonly UIButton _contentOverlayButton;
+		private readonly UISwipeGestureRecognizer _gestureRecogniser;
 		private readonly int _shadowSize;
 		private UIViewController _contentViewController;
 		private EclipseDirection _eclipseDirection;
@@ -40,6 +41,11 @@ namespace Sequence.MonoTouch.SlidingControls
 				CoverEclipsedView();
 			};
 					
+			_gestureRecogniser = new UISwipeGestureRecognizer();
+			_gestureRecogniser.AddTarget(() => EclipsedViewIsVisible = false);
+			SetSwipeDirection();
+			_contentOverlayButton.AddGestureRecognizer(_gestureRecogniser);
+		
 			EclipsedViewController = initialEclipsedViewController;
 			ContentViewController = initialContentViewController;
 		}
@@ -96,6 +102,7 @@ namespace Sequence.MonoTouch.SlidingControls
 			set
 			{
 				_eclipseDirection = value;
+				SetSwipeDirection();
 				RecalculateChildFrames();
 			}
 		}
@@ -286,6 +293,25 @@ namespace Sequence.MonoTouch.SlidingControls
 			}
 					
 			View.AddSubview(_contentOverlayButton);
+		}
+
+		private void SetSwipeDirection()
+		{
+			switch (_eclipseDirection)
+			{
+				case EclipseDirection.Bottom:
+					_gestureRecogniser.Direction = UISwipeGestureRecognizerDirection.Down;
+					break;
+				case EclipseDirection.Left:
+					_gestureRecogniser.Direction = UISwipeGestureRecognizerDirection.Left;
+					break;
+				case EclipseDirection.Right:
+					_gestureRecogniser.Direction = UISwipeGestureRecognizerDirection.Right;
+					break;
+				case EclipseDirection.Top:
+					_gestureRecogniser.Direction = UISwipeGestureRecognizerDirection.Up;
+					break;
+			}
 		}
 				
 		protected void EnsureInvokedOnMainThread(Action action)
