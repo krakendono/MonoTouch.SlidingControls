@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequence.MonoTouch.SlidingControls", "Sequence.MonoTouch.SlidingControls\Sequence.MonoTouch.SlidingControls.csproj", "{080C02BA-7305-47E7-86B9-A8CE6A4C101E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequence.MonoTouch.SlidingControls.Samples.Simple", "Sequence.MonoTouch.SlidingControls.Samples.Simple\Sequence.MonoTouch.SlidingControls.Samples.Simple.csproj", "{1D79771E-FC87-4F22-AED0-07ED57C35DFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{080C02BA-7305-47E7-86B9-A8CE6A4C101E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{080C02BA-7305-47E7-86B9-A8CE6A4C101E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{080C02BA-7305-47E7-86B9-A8CE6A4C101E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{080C02BA-7305-47E7-86B9-A8CE6A4C101E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Debug|iPhone.Build.0 = Debug|iPhone
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Release|iPhone.ActiveCfg = Release|iPhone
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Release|iPhone.Build.0 = Release|iPhone
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Sequence.MonoTouch.SlidingControls.Samples.Simple\Sequence.MonoTouch.SlidingControls.Samples.Simple.csproj
+	EndGlobalSection
+EndGlobal
