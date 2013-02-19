@@ -35,7 +35,7 @@ namespace Sequence.MonoTouch.SlidingControls
 			}
 					
 			_contentOverlayButton = new UIButton();
-			_contentOverlayButton.TouchDown += delegate
+			_contentOverlayButton.TouchUpInside += delegate
 			{
 				CoverEclipsedView();
 			};
