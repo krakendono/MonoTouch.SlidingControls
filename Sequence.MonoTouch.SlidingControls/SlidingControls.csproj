@@ -41,7 +41,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="EclipsingViewControllerBase.cs" />
     <Compile Include="EclipseDirection.cs" />
+    <Compile Include="EclipsingViewController.cs" />
   </ItemGroup>
 </Project>

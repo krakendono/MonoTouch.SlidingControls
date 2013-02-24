@@ -99,9 +99,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Sequence.MonoTouch.SlidingControls\Sequence.MonoTouch.SlidingControls.csproj">
+    <ProjectReference Include="..\Sequence.MonoTouch.SlidingControls\SlidingControls.csproj">
       <Project>{080C02BA-7305-47E7-86B9-A8CE6A4C101E}</Project>
-      <Name>Sequence.MonoTouch.SlidingControls</Name>
+      <Name>SlidingControls</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

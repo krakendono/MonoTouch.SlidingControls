@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequence.MonoTouch.SlidingControls", "Sequence.MonoTouch.SlidingControls\Sequence.MonoTouch.SlidingControls.csproj", "{080C02BA-7305-47E7-86B9-A8CE6A4C101E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidingControls", "Sequence.MonoTouch.SlidingControls\SlidingControls.csproj", "{080C02BA-7305-47E7-86B9-A8CE6A4C101E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequence.MonoTouch.SlidingControls.Samples.Simple", "Sequence.MonoTouch.SlidingControls.Samples.Simple\Sequence.MonoTouch.SlidingControls.Samples.Simple.csproj", "{1D79771E-FC87-4F22-AED0-07ED57C35DFD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.Simple", "Sequence.MonoTouch.SlidingControls.Samples.Simple\Samples.Simple.csproj", "{1D79771E-FC87-4F22-AED0-07ED57C35DFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +39,6 @@ Global
 		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Sequence.MonoTouch.SlidingControls.Samples.Simple\Sequence.MonoTouch.SlidingControls.Samples.Simple.csproj
+		StartupItem = Sequence.MonoTouch.SlidingControls.Samples.Simple\Samples.Simple.csproj
 	EndGlobalSection
 EndGlobal
