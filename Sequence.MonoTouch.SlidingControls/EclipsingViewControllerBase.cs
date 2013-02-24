@@ -267,7 +267,7 @@ namespace Sequence.MonoTouch.SlidingControls
 				
 		private void DoCoverOrUncoverAnimation()
 		{
-			UIView.Animate(0.5, RecalculateChildFrames, () => { 
+			UIView.Animate(0.5, RecalculateContentViewFrame, () => { 
 				if (!EclipsedViewIsVisible && _shadowSize > 0)
 					RemoveShadow();
 			});
