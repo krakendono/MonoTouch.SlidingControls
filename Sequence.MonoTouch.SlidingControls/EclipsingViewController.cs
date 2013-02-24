@@ -161,7 +161,7 @@ namespace Sequence.MonoTouch.SlidingControls
 				return;
 			}
 					
-			var frame = View.Frame;
+			var bounds = View.Bounds;
 			float xOffset = 0;
 			float yOffset = 0;
 					
@@ -174,8 +174,8 @@ namespace Sequence.MonoTouch.SlidingControls
 				yOffset = CalculateOffsetForContentView();
 			}
 					
-			var frameForContentDisplay = new RectangleF(xOffset, yOffset, frame.Width, frame.Height);
-			;
+			var frameForContentDisplay = new RectangleF(xOffset, yOffset, bounds.Width, bounds.Height);
+
 			ContentViewController.View.Frame = frameForContentDisplay;
 					
 			if (_shadowSize > 0)
@@ -210,12 +210,12 @@ namespace Sequence.MonoTouch.SlidingControls
 			if (EclipseDirection == EclipseDirection.Left || EclipseDirection == EclipseDirection.Right)
 			{
 				EclipsedViewController.View.Frame = new RectangleF(
-							CalculateOffsetForEclipsedViewFrame(), 0, EclipsedViewSize, View.Frame.Height);
+							CalculateOffsetForEclipsedViewFrame(), 0, EclipsedViewSize, View.Bounds.Height);
 			}
 			else
 			{
 				EclipsedViewController.View.Frame = new RectangleF(
-							0, CalculateOffsetForEclipsedViewFrame(), View.Frame.Width, EclipsedViewSize);
+							0, CalculateOffsetForEclipsedViewFrame(), View.Bounds.Width, EclipsedViewSize);
 			}
 		}
 				
@@ -227,10 +227,10 @@ namespace Sequence.MonoTouch.SlidingControls
 			}
 			else if (EclipseDirection == EclipseDirection.Right)
 			{
-				return View.Frame.Width - EclipsedViewSize;
+				return View.Bounds.Width - EclipsedViewSize;
 			}
 					
-			return View.Frame.Height - EclipsedViewSize;
+			return View.Bounds.Height - EclipsedViewSize;
 		}
 				
 		private float CalculateOffsetForContentView()
