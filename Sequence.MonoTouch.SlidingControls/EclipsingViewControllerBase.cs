@@ -57,7 +57,9 @@ namespace Sequence.MonoTouch.SlidingControls
 			{
 				if (_eclipsedViewController != null)
 				{
+					_eclipsedViewController.WillMoveToParentViewController(null);
 					_eclipsedViewController.View.RemoveFromSuperview();
+					_eclipsedViewController.RemoveFromParentViewController();
 				}
 						
 				_eclipsedViewController = value;
@@ -66,8 +68,10 @@ namespace Sequence.MonoTouch.SlidingControls
 				{
 					return;
 				}
-						
+
+				AddChildViewController(_eclipsedViewController);
 				View.InsertSubview(_eclipsedViewController.View, 0);
+				_eclipsedViewController.DidMoveToParentViewController(this);	
 						
 				RecalculateChildFrames();
 			}
@@ -80,9 +84,11 @@ namespace Sequence.MonoTouch.SlidingControls
 			{
 				if (_contentViewController != null)
 				{
+					_contentViewController.WillMoveToParentViewController(null);
 					_contentViewController.View.RemoveFromSuperview();
+					_contentViewController.RemoveFromParentViewController();
 				}
-						
+
 				_contentViewController = value;
 						
 				if (value == null)
@@ -90,7 +96,9 @@ namespace Sequence.MonoTouch.SlidingControls
 					return;
 				}
 						
+				AddChildViewController(_contentViewController);
 				View.AddSubview(_contentViewController.View);
+				_contentViewController.DidMoveToParentViewController(this);
 						
 				RecalculateChildFrames();
 			}
