@@ -6,7 +6,7 @@ using MonoTouch.UIKit;
 
 namespace Sequence.MonoTouch.SlidingControls.Samples.Simple
 {
-	public partial class MainView : EclipsingViewControllerBase
+	public partial class MainView : EclipsingViewController
 	{
 		public MainView()
 			: base()

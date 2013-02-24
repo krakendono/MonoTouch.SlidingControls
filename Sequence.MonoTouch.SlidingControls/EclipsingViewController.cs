@@ -5,7 +5,7 @@ using MonoTouch.Foundation;
 
 namespace Sequence.MonoTouch.SlidingControls
 {
-	public abstract class EclipsingViewControllerBase : UIViewController
+	public class EclipsingViewController : UIViewController
 	{
 		protected readonly UIView _shadowView;
 		private readonly UIButton _contentOverlayButton;
@@ -17,7 +17,7 @@ namespace Sequence.MonoTouch.SlidingControls
 		private bool _eclipsedViewIsVisible;
 		private int _eclipsedViewSize;
 				
-		protected EclipsingViewControllerBase(UIViewController initialContentViewController = null,
+		public EclipsingViewController(UIViewController initialContentViewController = null,
 				                                      UIViewController initialEclipsedViewController = null,
 				                                      int eclipsedViewSize = 200,
 				                                      EclipseDirection eclipseDirection = EclipseDirection.Left,
@@ -26,7 +26,6 @@ namespace Sequence.MonoTouch.SlidingControls
 			_eclipsedViewSize = eclipsedViewSize;
 			_eclipseDirection = eclipseDirection;
 			_shadowSize = shadowWidth;
-					
 			if (_shadowSize > 0)
 			{
 				_shadowView = new UIView();
@@ -53,7 +52,7 @@ namespace Sequence.MonoTouch.SlidingControls
 		public UIViewController EclipsedViewController
 		{
 			get { return _eclipsedViewController; }
-			protected set
+			set
 			{
 				if (_eclipsedViewController != null)
 				{
@@ -80,7 +79,7 @@ namespace Sequence.MonoTouch.SlidingControls
 		public UIViewController ContentViewController
 		{
 			get { return _contentViewController; }
-			protected set
+			set
 			{
 				if (_contentViewController != null)
 				{
@@ -132,7 +131,7 @@ namespace Sequence.MonoTouch.SlidingControls
 		public int EclipsedViewSize
 		{
 			get { return _eclipsedViewSize; }
-			protected set { _eclipsedViewSize = value; }
+			set { _eclipsedViewSize = value; }
 		}
 				
 		protected virtual void OnContentViewWillUncoverEclipsedView()
