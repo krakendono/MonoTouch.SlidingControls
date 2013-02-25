@@ -8,6 +8,10 @@ namespace Sequence.MonoTouch.SlidingControls.Samples.Simple
 {
 	public partial class MainView : EclipsingViewController
 	{
+		UIViewController _contentViewController;
+		UIScrollView _scrollView;
+		float _buttonHeight = 50f;
+
 		public MainView()
 			: base()
 		{
@@ -17,23 +21,26 @@ namespace Sequence.MonoTouch.SlidingControls.Samples.Simple
 		{
 			base.ViewDidLoad();
 			
-			var contentViewController = new UIViewController();
-			contentViewController.View.BackgroundColor = UIColor.DarkGray;
-			
+			_contentViewController = new UIViewController();
+			_contentViewController.View.BackgroundColor = UIColor.DarkGray;
+
+			_scrollView = new UIScrollView();
+			_contentViewController.View.AddSubview(_scrollView);
+
 			var showEclipsedViewButton = GenerateButton(EclipseDirection.Left, 100);
-			contentViewController.View.AddSubview(showEclipsedViewButton);
+			_scrollView.AddSubview(showEclipsedViewButton);
 			showEclipsedViewButton = GenerateButton(EclipseDirection.Left);
-			contentViewController.View.AddSubview(showEclipsedViewButton);
+			_scrollView.AddSubview(showEclipsedViewButton);
 			showEclipsedViewButton = GenerateButton(EclipseDirection.Left, 300);
-			contentViewController.View.AddSubview(showEclipsedViewButton);
+			_scrollView.AddSubview(showEclipsedViewButton);
 			showEclipsedViewButton = GenerateButton(EclipseDirection.Right);
-			contentViewController.View.AddSubview(showEclipsedViewButton);
+			_scrollView.AddSubview(showEclipsedViewButton);
 			showEclipsedViewButton = GenerateButton(EclipseDirection.Top);
-			contentViewController.View.AddSubview(showEclipsedViewButton);
+			_scrollView.AddSubview(showEclipsedViewButton);
 			showEclipsedViewButton = GenerateButton(EclipseDirection.Bottom);
-			contentViewController.View.AddSubview(showEclipsedViewButton);
+			_scrollView.AddSubview(showEclipsedViewButton);
 			
-			ContentViewController = contentViewController;
+			ContentViewController = _contentViewController;
 			
 			var eclipsedViewController = new UIViewController();
 			eclipsedViewController.View.BackgroundColor = UIColor.Red;
@@ -64,15 +71,23 @@ namespace Sequence.MonoTouch.SlidingControls.Samples.Simple
 				EclipsedViewIsVisible = true;
 			};
 			var buttonWidth = 200f;
-			var buttonHeight = 50f;
-			var yOffset = buttonHeight * 1.2f * (_buttonCount - 2.5f);
+			_buttonHeight = 50f;
+			var yOffset = _buttonHeight * 1.2f * (_buttonCount - 2.5f);
 			showEclipsedViewButton.Frame = new RectangleF(
 				(View.Frame.Width - buttonWidth) / 2,
-				(View.Frame.Height - buttonHeight) / 2 + yOffset, 
+				(View.Frame.Height - _buttonHeight) / 2 + yOffset, 
 				buttonWidth, 
-				buttonHeight);
+				_buttonHeight);
 			_buttonCount++;
 			return showEclipsedViewButton;
+		}
+
+		public override void ViewWillLayoutSubviews()
+		{
+			base.ViewWillLayoutSubviews();
+
+			_scrollView.Frame = new RectangleF(0, 0, _contentViewController.View.Bounds.Width, _contentViewController.View.Bounds.Height);
+			_scrollView.ContentSize = new SizeF(_contentViewController.View.Bounds.Width, _buttonHeight * 1.2f * (_buttonCount + 2));
 		}
 	}
 }
