@@ -5,7 +5,7 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
-namespace Sequence.MonoTouch.SlidingControls.Samples.Simple
+namespace Sequence.Touch.SlidingControls.Samples.MvxSlidingMenu
 {
 	public class Application
 	{

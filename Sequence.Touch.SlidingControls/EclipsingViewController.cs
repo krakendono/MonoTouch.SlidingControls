@@ -3,7 +3,7 @@ using MonoTouch.UIKit;
 using System.Drawing;
 using MonoTouch.Foundation;
 
-namespace Sequence.MonoTouch.SlidingControls
+namespace Sequence.Touch.SlidingControls
 {
 	public class EclipsingViewController : UIViewController
 	{
@@ -12,16 +12,17 @@ namespace Sequence.MonoTouch.SlidingControls
 		private readonly UISwipeGestureRecognizer _gestureRecogniser;
 		private readonly int _shadowSize;
 		private UIViewController _contentViewController;
+		private UIImageView _contentBackgroundImageView;
 		private EclipseDirection _eclipseDirection;
 		private UIViewController _eclipsedViewController;
 		private bool _eclipsedViewIsVisible;
 		private int _eclipsedViewSize;
 				
 		public EclipsingViewController(UIViewController initialContentViewController = null,
-				                                      UIViewController initialEclipsedViewController = null,
-				                                      int eclipsedViewSize = 200,
-				                                      EclipseDirection eclipseDirection = EclipseDirection.Left,
-				                                      int shadowWidth = 4)
+                                       UIViewController initialEclipsedViewController = null,
+                                       int eclipsedViewSize = 200,
+                                       EclipseDirection eclipseDirection = EclipseDirection.Left,
+                                       int shadowWidth = 4)
 		{
 			_eclipsedViewSize = eclipsedViewSize;
 			_eclipseDirection = eclipseDirection;
@@ -39,6 +40,9 @@ namespace Sequence.MonoTouch.SlidingControls
 			{
 				CoverEclipsedView();
 			};
+
+			_contentBackgroundImageView = new UIImageView();
+			View.AddSubview(_contentBackgroundImageView);
 					
 			_gestureRecogniser = new UISwipeGestureRecognizer();
 			_gestureRecogniser.AddTarget(() => EclipsedViewIsVisible = false);
@@ -75,7 +79,12 @@ namespace Sequence.MonoTouch.SlidingControls
 				RecalculateChildFrames();
 			}
 		}
-				
+
+		public UIImageView ContentBackgroundImageView
+		{
+			get { return _contentBackgroundImageView; }
+		}
+
 		public UIViewController ContentViewController
 		{
 			get { return _contentViewController; }
@@ -177,7 +186,8 @@ namespace Sequence.MonoTouch.SlidingControls
 			var frameForContentDisplay = new RectangleF(xOffset, yOffset, bounds.Width, bounds.Height);
 
 			ContentViewController.View.Frame = frameForContentDisplay;
-					
+			ContentBackgroundImageView.Frame = frameForContentDisplay;
+
 			if (_shadowSize > 0)
 			{
 				_shadowView.Frame = frameForContentDisplay;

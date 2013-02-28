@@ -1,9 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidingControls", "Sequence.MonoTouch.SlidingControls\SlidingControls.csproj", "{080C02BA-7305-47E7-86B9-A8CE6A4C101E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidingControls", "Sequence.Touch.SlidingControls\SlidingControls.csproj", "{080C02BA-7305-47E7-86B9-A8CE6A4C101E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.Simple", "Sequence.MonoTouch.SlidingControls.Samples.Simple\Samples.Simple.csproj", "{1D79771E-FC87-4F22-AED0-07ED57C35DFD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.Simple", "Sequence.Touch.SlidingControls.Samples.Simple\Samples.Simple.csproj", "{1D79771E-FC87-4F22-AED0-07ED57C35DFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.MvxSlidingMenu", "Sequence.Touch.SlidingControls.Samples.MvxSlidingMenu\Samples.MvxSlidingMenu.csproj", "{0083BF93-D021-4E05-9E60-1CFA35CA8930}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,22 @@ Global
 		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.Debug|iPhone.Build.0 = Debug|iPhone
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.Release|iPhone.ActiveCfg = Release|iPhone
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.Release|iPhone.Build.0 = Release|iPhone
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{0083BF93-D021-4E05-9E60-1CFA35CA8930}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{080C02BA-7305-47E7-86B9-A8CE6A4C101E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{080C02BA-7305-47E7-86B9-A8CE6A4C101E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{080C02BA-7305-47E7-86B9-A8CE6A4C101E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +57,6 @@ Global
 		{1D79771E-FC87-4F22-AED0-07ED57C35DFD}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Sequence.MonoTouch.SlidingControls.Samples.Simple\Samples.Simple.csproj
+		StartupItem = Sequence.Touch.SlidingControls.Samples.Simple\Samples.Simple.csproj
 	EndGlobalSection
 EndGlobal

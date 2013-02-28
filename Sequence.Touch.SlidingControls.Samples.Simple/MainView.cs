@@ -4,7 +4,7 @@ using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
-namespace Sequence.MonoTouch.SlidingControls.Samples.Simple
+namespace Sequence.Touch.SlidingControls.Samples.Simple
 {
 	public partial class MainView : EclipsingViewController
 	{

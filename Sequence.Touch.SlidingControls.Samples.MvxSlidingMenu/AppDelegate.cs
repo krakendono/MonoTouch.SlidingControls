@@ -5,7 +5,7 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
-namespace Sequence.MonoTouch.SlidingControls.Samples.Simple
+namespace Sequence.Touch.SlidingControls.Samples.MvxSlidingMenu
 {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the 
 	// User Interface of the application, as well as listening (and optionally responding) to 

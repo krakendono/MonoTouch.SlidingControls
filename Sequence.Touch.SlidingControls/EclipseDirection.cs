@@ -1,6 +1,6 @@
 using System;
 
-namespace Sequence.MonoTouch.SlidingControls
+namespace Sequence.Touch.SlidingControls
 {
 	public enum EclipseDirection
 	{
