@@ -49,8 +49,13 @@ namespace Sequence.Touch.SlidingControls
 			SetSwipeDirection();
 			_contentOverlayButton.AddGestureRecognizer(_gestureRecogniser);
 		
-			EclipsedViewController = initialEclipsedViewController;
-			ContentViewController = initialContentViewController;
+			// initial view controllers may have been replaced in sub class when ViewDidLoad got called before constructor
+			if (EclipsedViewController == null) {
+				EclipsedViewController = initialEclipsedViewController;
+			}
+			if (ContentViewController == null) {
+				ContentViewController = initialContentViewController;
+			}
 		}
 				
 		public UIViewController EclipsedViewController
